@@ -70,6 +70,34 @@ Once you finish the assignment, submit a URL link to your repository or your pul
 
 <br>
 
+## IntArrayList vs IntVector - Efficiency Analysis
+
+### When IntArrayList is More Efficient
+
+**IntArrayList** is more efficient when you have a **predictable growth pattern** with moderate additions to the list. Since it grows by 50% each time, it uses memory more conservatively and has less wasted space.
+
+**Example scenario:**
+- You're building a shopping cart system where users typically add 10-20 items
+- Starting with 10 slots and growing by 50% (10 → 15 → 22 → 33) is efficient
+- Less memory overhead compared to doubling
+- Fewer reallocations needed for moderate-sized collections
+
+### When IntVector is More Efficient
+
+**IntVector** is more efficient when you expect **rapid or unpredictable growth** in the number of elements. Doubling the capacity reduces the number of resize operations needed.
+
+**Example scenario:**
+- Processing a large data stream where you might receive hundreds or thousands of elements
+- Starting with 20 slots and doubling (20 → 40 → 80 → 160 → 320) reaches large capacities quickly
+- Fewer copy operations overall when dealing with large datasets
+- Better performance for bulk operations despite using more memory
+
+### Summary
+- **IntArrayList**: Better for small to medium collections with predictable growth (more memory efficient)
+- **IntVector**: Better for large or rapidly growing collections (fewer resize operations)
+
+<br>
+
 ## FAQs
 
 <br>
